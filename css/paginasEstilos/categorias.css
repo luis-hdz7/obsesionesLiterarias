@@ -27,7 +27,7 @@
 }
 
 #cita {
-    font-size: var(--fs-2xl);
+    font-size: var(--fs-xl);
     width: 100%;
     display: flex;
     align-items: center;
@@ -37,18 +37,46 @@
 }
 #autor {
     width: 100%;
-    font-size: var(--fs-xl);
+    font-size: var(--fs-lg);
     display: flex;
     align-items: center;
     justify-content: center;
     padding: 20px;
     font-family: var(--cursiva-fuentes);
 }
-@media (min-width: 850px){
+.categorias-opciones{
+    width: 100%;
+    overflow-x: auto;
+    display: flex;
+    gap: 1rem;
+    scroll-behavior: smooth;
+}
+.categorias-opciones::-webkit-scrollbar{
+    display: none;
+}
+.categoria-img img{
+    height: 70px;
+    width: 70px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.categoria-img:hover {
+    transform: translateY(-5px);
+}
+/**Categorias*/
+.titulo-seccion{
+    text-align: center;
+}
+@media (min-width: 810px){
     #cita{
-        font-size: var();
+        font-size: var(--fs-2xl);
     }
     #autor{
-        font-size: var();
+        font-size: var(--fs-xl);
+    }
+    .categorias-opciones{
+    width: 100%;
+    display: flex;
+    gap: 1rem;
+    justify-content: space-around;
     }
 }

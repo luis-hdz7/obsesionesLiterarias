@@ -141,23 +141,8 @@ textarea::placeholder {
 
 
 /**DESKTOP*/
-/*@media (min-width: 850px){
-    header{
-        flex-direction: row;
-        justify-content: space-between;
-        padding: 0 30px;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 1000;
+@media (min-width: 850px){
+    textarea{
+        width: 400px;
     }
-    nav{
-        display: flex;
-        gap: 15px;
-        flex-direction: row;
-    }
-    #hero{
-        height: 90vh;
-    }
-}*/
+}

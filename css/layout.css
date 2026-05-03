@@ -68,6 +68,10 @@ footer{
     padding-bottom: 10px;
     color: var(--color-chocolate-claro);
     display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
 }
 .social-media{
     display: flex;

@@ -76,4 +76,7 @@ main{
     header{
         margin-bottom: 20px;
     }
+    #nombre,#email{
+        width: 400px;
+    }
 }

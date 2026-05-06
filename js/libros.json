@@ -1,0 +1,233 @@
+[
+  {
+    "titulo": "Los Miserables",
+    "autor": "Victor Hugo",
+    "categoria": "destacados",
+    "descripcion": "Los Miserables de Víctor Hugo narra la redención de Jean Valjean, un exconvicto que busca una nueva vida en la Francia del siglo XIX. La historia entrelaza pobreza, amor, justicia y la lucha revolucionaria en las barricadas de París.",
+    "imagen": "images/libro1.jpg"
+  },
+  {
+    "titulo": "Crimen y Castigo",
+    "autor": "Fiodor Dostoyevski",
+    "categoria": "destacados",
+    "descripcion": "Un joven que comete un crimen y debe enfrentarse a las consecuencias psicológicas de sus actos. El conficto interno del protagonista nos lleva a un intenso viaje sobre la moral la culpa y la redención",
+    "imagen": "images/libro2.jpg"
+  },
+  {
+    "titulo": "Mujercitas",
+    "autor": "Louisa May Alcott",
+    "categoria": "destacados",
+    "descripcion": "La historia sigue a las hermanas March mientras crecen durante la Guerra Civil estadounidense, enfrentando desafíos personales, sueños y valores familiares que moldean su camino hacia la madurez.",
+    "imagen": "images/libro3.jpg"
+  },
+  {
+    "titulo": "Azul...",
+    "autor": "Rubén Darío",
+    "categoria": "destacados",
+    "descripcion": "Una colección de cuentos y poemas que mezcla fantasía, crítica social y belleza estética, considerada una obra clave del modernismo literario en América Latina.",
+    "imagen": "images/libro4.jpg"
+  },
+  {
+    "titulo": "1984",
+    "autor": "George Orwell",
+    "categoria": "novelas",
+    "descripcion": "Una novela distópica que retrata una sociedad totalitaria donde el gobierno controla cada aspecto de la vida, incluso el pensamiento, siguiendo la historia de un hombre que empieza a cuestionar el sistema.",
+    "imagen": "images/novelas/1984.jpg"
+  },
+  {
+    "titulo": "Cien Años de Soledad",
+    "autor": "Gabriel García Marquez",
+    "categoria": "novelas",
+    "descripcion": "La historia de una familia a lo largo de varias generaciones en un pueblo donde lo mágico y lo real se entrelazan, explorando el tiempo, la memoria y la soledad.",
+    "imagen": "images/novelas/cienAniosSoledad.jpg"
+  },
+  {
+    "titulo": "La Señora Dalloway",
+    "autor": "Virginia Woolf",
+    "categoria": "novelas",
+    "descripcion": "A lo largo de un solo día, una mujer reflexiona sobre su vida, sus decisiones y el paso del tiempo en una narrativa introspectiva centrada en la mente humana.",
+    "imagen": "images/novelas/dalloway.jpg"
+  },
+  {
+    "titulo": "Don Quijote de la Mancha",
+    "autor": "Miguel de Cervantes",
+    "categoria": "novelas",
+    "descripcion": "Un hombre, influenciado por los libros de caballería, decide convertirse en caballero andante y vive aventuras donde confunde la realidad con la fantasía.",
+    "imagen": "images/novelas/donQuijote.jpg"
+  },
+  {
+    "titulo": "El Principito",
+    "autor": "Antoine de Saint-Exupéry",
+    "categoria": "novelas",
+    "descripcion": "Un pequeño viajero recorre distintos mundos conociendo personajes que reflejan la naturaleza humana, en una historia sobre la amistad, el amor y el sentido de la vida.",
+    "imagen": "images/novelas/elPrincipito.jpg"
+  },
+  {
+    "titulo": "Castigo Divino",
+    "autor": "Sergio Ramírez",
+    "categoria": "nicaraguenses",
+    "descripcion": "Una novela basada en hechos reales que narra un crimen en la Nicaragua de los años 30, mezclando intriga, crítica social y retrato de una sociedad marcada por las apariencias.",
+    "imagen": "images/nicaraguenses/castigoDivino.jpg"
+  },
+  {
+    "titulo": "Sofia de los Presagios",
+    "autor": "Gioconda Belli",
+    "categoria": "nicaraguenses",
+    "descripcion": "La historia de una mujer que busca su identidad y libertad en un entorno lleno de supersticiones, explorando el destino, el amor y el crecimiento personal.",
+    "imagen": "images/nicaraguenses/sofiaPresagios.jpg"
+  },
+  {
+    "titulo": "Danzaré Sobre sus Tumbas",
+    "autor": "Fátima Villalta",
+    "categoria": "nicaraguenses",
+    "descripcion": "Una perturbadora novela sobre la descomposición familiar y el odio entre dos hermanos. En un entorno de miseria y abandono, María Eugenia narra la fractura de su realidad y el descenso hacia la locura, explorando los rincones más oscuros del resentimiento y la psique humana.",
+    "imagen": "images/nicaraguenses/danzareSobreSuTumba.jpg"
+  },
+  {
+    "titulo": "Prosas Profanas",
+    "autor": "Rubén Darío",
+    "categoria": "nicaraguenses",
+    "descripcion": "Una colección de poemas que destaca por su musicalidad, sensualidad y riqueza estética, considerada una de las obras más importantes del modernismo.",
+    "imagen": "images/nicaraguenses/prosasProfanas.jpg"
+  },
+  {
+    "titulo": "La Muerte de Acuario",
+    "autor": "José Coronel Urtecho",
+    "categoria": "nicaraguenses",
+    "descripcion": "Una obra que reflexiona sobre el paso del tiempo y los cambios sociales, utilizando un estilo poético y simbólico característico de su autor.",
+    "imagen": "images/nicaraguenses/muerteAcuario.webp"
+  },
+  {
+    "titulo": "Trágame Tierra",
+    "autor": "Lizandro Chávez Alfaro",
+    "categoria": "nicaraguenses",
+    "descripcion": "Una novela que retrata las tensiones sociales y políticas de Nicaragua, enfocándose en las desigualdades y conflictos que marcan la vida de sus personajes.",
+    "imagen": "images/nicaraguenses/tragameTierra.jpg"
+  },
+  {
+    "titulo": "Cómo Hacer que te Pasen Cosas Buenas",
+    "autor": "Marian Rojas Estapé",
+    "categoria": "autoayuda",
+    "descripcion": "Un libro de desarrollo personal que explica cómo los pensamientos, las emociones y los hábitos influyen en la vida, proponiendo estrategias para mejorar el bienestar y alcanzar objetivos.",
+    "imagen": "images/autoayuda/cosasBuenas.jpg"
+  },
+  {
+    "titulo": "Amor Orgásmico",
+    "autor": "Diana Richardson",
+    "categoria": "autoayuda",
+    "descripcion": "Explora la relación de pareja desde una perspectiva emocional y consciente, enfocándose en la conexión, la intimidad y el crecimiento personal dentro del vínculo.",
+    "imagen": "images/autoayuda/amorOrgasmico.jpg"
+  },
+  {
+    "titulo": "Tus Zonas Erróneas",
+    "autor": "Wayne Dyer",
+    "categoria": "autoayuda",
+    "descripcion": "Un clásico que analiza pensamientos y conductas que limitan a las personas, ofreciendo herramientas para superarlos y tomar control de la propia vida.",
+    "imagen": "images/autoayuda/zonasErroneas.jpg"
+  },
+  {
+    "titulo": "La Gran Magia",
+    "autor": "Elizabeth Gilbert",
+    "categoria": "autoayuda",
+    "descripcion": "Reflexiona sobre la creatividad, el miedo y la inspiración, animando a vivir de forma más auténtica y a explorar ideas sin temor.",
+    "imagen": "images/autoayuda/liberaTuMagia.jpg"
+  },
+  {
+    "titulo": "El Monje que Vendio Su Ferrari",
+    "autor": "Robin Sharma",
+    "categoria": "autoayuda",
+    "descripcion": "Una fábula sobre un abogado que transforma su vida al adoptar hábitos más simples y espirituales, aprendiendo sobre disciplina y propósito.",
+    "imagen": "images/autoayuda/monje.jpg"
+  },
+  {
+    "titulo": "El Engaño de Ícaro",
+    "autor": "Seth Godín",
+    "categoria": "autoayuda",
+    "descripcion": "Invita a romper con la mentalidad tradicional y desarrollar la creatividad, tomar riesgos y construir un camino propio.",
+    "imagen": "images/autoayuda/icaro.jpg"
+  },
+  {
+    "titulo": "El Origen de las Especies",
+    "autor": "Charles Darwin",
+    "categoria": "ciencia",
+    "descripcion": "Obra fundamental que introduce la teoría de la evolución por selección natural, explicando cómo las especies cambian a lo largo del tiempo.",
+    "imagen": "images/ciencia/origenEspecies.jpg"
+  },
+  {
+    "titulo": "El Origen de las Especies",
+    "autor": "Charles Darwin",
+    "categoria": "ciencia",
+    "descripcion": "Obra fundamental que introduce la teoría de la evolución por selección natural, explicando cómo las especies cambian a lo largo del tiempo.",
+    "imagen": "images/ciencia/origenEspecies.jpg"
+  },
+  {
+    "titulo": "Brevisima Historia del Tiempo",
+    "autor": "Stephen Hawking",
+    "categoria": "ciencia",
+    "descripcion": "Una explicación accesible de conceptos complejos del universo como el tiempo, el espacio, los agujeros negros y el origen del cosmos.",
+    "imagen": "images/ciencia/historiaTiempo.jpg"
+  },
+  {
+    "titulo": "Sobre la Teoria de la Relatividad Especial y General",
+    "autor": "Albert Einstein",
+    "categoria": "ciencia",
+    "descripcion": "Presenta de forma clara las ideas principales de la relatividad, explicando cómo el espacio y el tiempo están conectados y cómo la gravedad afecta el universo.",
+    "imagen": "images/ciencia/relatividad.jpg"
+  },
+  {
+    "titulo": "¿Qué es la Vida?",
+    "autor": "Erwin Schrödinger",
+    "categoria": "ciencia",
+    "descripcion": "Un ensayo que explora la naturaleza de la vida desde la física, influyendo en el desarrollo de la biología molecular.",
+    "imagen": "images/ciencia/queEsVida.jpg"
+  },
+  {
+    "titulo": "Cosmos",
+    "autor": "Carl Sagan",
+    "categoria": "ciencia",
+    "descripcion": "Un viaje por el universo que combina ciencia, historia y filosofía para explicar el lugar de la humanidad en el cosmos.",
+    "imagen": "images/ciencia/cosmos.jpg"
+  },
+  {
+    "titulo": "La Revolución Psicobiótica",
+    "autor": "Scott Anderson",
+    "categoria": "ciencia",
+    "descripcion": "Explora la conexión entre el intestino y el cerebro, mostrando cómo la microbiota puede influir en la salud mental y el bienestar emocional.",
+    "imagen": "images/ciencia/cosmos.jpg"
+  },
+  {
+    "titulo": "Maus",
+    "autor": "Art Spiegelman",
+    "categoria": "historia",
+    "descripcion": "Novela gráfica que narra el Holocausto a través del testimonio del padre del autor,Vladek Spiegelman, representando a los judíos como ratones y a los nazis como gatos.",
+    "imagen": "images/historia/maus.jpg"
+  },
+  {
+    "titulo": "Historia total de la Segunda Guerra Mundial",
+    "autor": "Olivier Wieviorka",
+    "categoria": "historia",
+    "descripcion": "A diferencia de otros libros que se centran solo en batallas, este análisis busca integrar todas las dimensiones del conflicto: militar, política, económica y social. Wieviorka ofrece una visión global que explica no solo cómo se ganó la guerra, sino cómo el conflicto transformó las estructuras del mundo moderno de manera irreversible.",
+    "imagen": "images/historia/primerGuerraMundial.jpg"
+  },
+  {
+    "titulo": "El mundo que forjó la peste",
+    "autor": "James Belich",
+    "categoria": "historia",
+    "descripcion": "Examina cómo la peste negra transformó profundamente la economía, la sociedad y el desarrollo de Europa.",
+    "imagen": "images/historia/elMundoPeste.jpg"
+  },
+  {
+    "titulo": "El Amanecer de una Nueva Era",
+    "autor": "Marina Münkler",
+    "categoria": "historia",
+    "descripcion": "En el siglo XVI el mundo cambió de manera radical dando paso a una era de descubrimientos, conflictos y transformaciones. Desde la conquista de América y las pretensiones europeas sobre el Nuevo Mundo hasta la expansión otomana en Europa.",
+    "imagen": "images/historia/amanecerNuevaEra.jpg"
+  },
+  {
+    "titulo": "La Linterna Mágica",
+    "autor": "Timothy Garton Ash",
+    "categoria": "historia",
+    "descripcion": "Garton Ash combina el rigor del historiador con la agilidad del cronista para narrar la caída del muro de Berlín y el colapso del comunismo, capturando la atmósfera de esperanza y vértigo que definió el fin de la Guerra Fría.",
+    "imagen": "images/historia/linternaMagica.jpg"
+  }
+]

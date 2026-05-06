@@ -32,12 +32,12 @@ let citas = [
     'texto': 'Es en las noches de diciembre, cuando el termómetro está a cero, cuando más pensamos en el sol.'
   },
   {
-    'autor': 'Truman Capote',
-    'texto': 'Es mejor mirar al cielo que vivir allí.'
+    'autor': 'George Orwell',
+    'texto': 'Quien controla el pasado controla el futuro. Quien controla el presente controla el pasado.'
   },
   {
-    'autor': 'David Ben-Gurión',
-    'texto': ' Alguien que no cree en los milagros no es realista.'
+    'autor': 'Fiódor Dostoievski',
+    'texto': 'El misterio de la existencia humana no está en quedarse vivo, sino en encontrar algo por lo que vivir.'
   }
 ];
 

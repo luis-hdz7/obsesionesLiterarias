@@ -30,7 +30,7 @@ btn.addEventListener("click", () => {
 //*CARGAR LOS LIBROS DEL JSON
 //los libros destacados que siempren se cargan
 const prefijoRuta = window.location.pathname.includes('paginas/') ? '../' : ''
-fetch('../js/libros.json')
+fetch(`${prefijoRuta}js/libros.json`)
     .then(res=>{
         if(!res.ok){
             throw new Error("No se pudo cargar el archivo JSON");

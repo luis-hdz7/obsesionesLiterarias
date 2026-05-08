@@ -29,6 +29,7 @@ btn.addEventListener("click", () => {
 });
 //*CARGAR LOS LIBROS DEL JSON
 //los libros destacados que siempren se cargan
+const prefijoRuta = window.location.pathname.includes('paginas/') ? '../' : ''
 fetch('../js/libros.json')
     .then(res=>{
         if(!res.ok){
@@ -39,7 +40,6 @@ fetch('../js/libros.json')
     .then(datos=>{
         const contenedor=document.querySelector('.contenedor-libro-destacados')
         const librosFiltrados = datos.filter(libro => libro.categoria === 'destacados')
-        const prefijoRuta = window.location.pathname.includes('paginas/') ? '../' : ''
         contenedor.innerHTML=librosFiltrados.map(item=>`
             <div class="item">
                 <img src="${prefijoRuta}${item.imagen}" alt="Imagen de ${item.titulo}">
@@ -65,7 +65,6 @@ iconosCategoria.forEach(iconoCategoria => {
             if (!res.ok) throw new Error("No se pudo cargar el archivo JSON");
             const datos = await res.json();
             const librosFiltrados = datos.filter(libro => libro.categoria === seccionEscogida);
-            const prefijoRuta = window.location.pathname.includes('paginas/') ? '../' : ''
             contenedor.innerHTML = librosFiltrados.map(item =>`
                 <div class="item">
                     <img src="${prefijoRuta}${item.imagen}" alt="Imagen de ${item.titulo}">

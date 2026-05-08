@@ -38,9 +38,9 @@ fetch('../js/libros.json')
         return res.json()
     })
     .then(datos=>{
-        const contenedor=document.querySelector('.contenedor-libro-destacados')
-        const librosFiltrados = datos.filter(libro => libro.categoria === 'destacados')
-        contenedor.innerHTML=librosFiltrados.map(item=>`
+        const contenedorDestacados=document.querySelector('.contenedor-libro-destacados')
+        const librosDestacados = datos.filter(libro => libro.categoria === 'destacados')
+        contenedorDestacados.innerHTML=librosDestacados.map(item=>`
             <div class="item">
                 <img src="${prefijoRuta}${item.imagen}" alt="Imagen de ${item.titulo}">
                 <p><strong>${item.titulo}</strong></p>
@@ -82,30 +82,3 @@ iconosCategoria.forEach(iconoCategoria => {
         }
     });
 });
-//*CARGAR LOS LIBROS DEL JSON
-//los libros destacados que siempren se cargan
-fetch('../js/libros.json')
-    .then(res=>{
-        if(!respuesta.ok){
-            throw new Error("No se pudo cargar el archivo JSON");
-        }
-        return respuesta.json()
-    })
-    .then(datos=>{
-        const contenedor=document.querySelector('.contenedor-libro-destacados')
-        const librosFiltrados = datos.filter(libro => libro.categoria === destacados)
-        const prefijoRuta = window.location.pathname.includes('paginas/') ? '../' : ''
-        contenedor.innerHTML=librosFiltrados.map(item=>`
-            <div class="item">
-                <img src="${prefijoRuta}${item.imagen}" alt="Imagen de ${item.titulo}">
-                <p><strong>${item.titulo}</strong></p>
-                <ul>
-                    <li><em>Victor Hugo</em></li>
-                </ul>
-                <button class="btn-agregarCarrito btn-generico">Agregar al Carrito</button>
-            </div>
-            `).join('')
-    })
-    .catch(error=>{
-        console.error("Hubo un problema con la operación:", error);
-    })

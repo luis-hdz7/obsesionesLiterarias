@@ -1,7 +1,7 @@
 /**Caracteristicas*/
 .caracteristicas{
     margin: 30px 0;
-    padding: 70px;
+    padding: 70px 0;
 }
 .caracteristicas li{
     font-weight: bold;
@@ -16,6 +16,11 @@
 .direccion{
     display: none;
 }
+.google-map{
+    width:600px;
+    height:450px;
+    border:0;
+}
 
 
 /**DESKTOP*/
@@ -28,9 +33,10 @@
         padding: 20px 70px;
     }
     .caracteristicas .container{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax());
+    gap: clamp(10px, 2vw, 20px);
+    justify-content: space-around;
     padding: 0 10px;
     }
     .direccion{

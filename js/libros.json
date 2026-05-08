@@ -154,13 +154,6 @@
     "imagen": "images/ciencia/origenEspecies.jpg"
   },
   {
-    "titulo": "El Origen de las Especies",
-    "autor": "Charles Darwin",
-    "categoria": "ciencia",
-    "descripcion": "Obra fundamental que introduce la teoría de la evolución por selección natural, explicando cómo las especies cambian a lo largo del tiempo.",
-    "imagen": "images/ciencia/origenEspecies.jpg"
-  },
-  {
     "titulo": "Brevisima Historia del Tiempo",
     "autor": "Stephen Hawking",
     "categoria": "ciencia",
@@ -193,7 +186,7 @@
     "autor": "Scott Anderson",
     "categoria": "ciencia",
     "descripcion": "Explora la conexión entre el intestino y el cerebro, mostrando cómo la microbiota puede influir en la salud mental y el bienestar emocional.",
-    "imagen": "images/ciencia/cosmos.jpg"
+    "imagen": "images/ciencia/revolucionPsicobiotica.jpg"
   },
   {
     "titulo": "Maus",
@@ -207,7 +200,7 @@
     "autor": "Olivier Wieviorka",
     "categoria": "historia",
     "descripcion": "A diferencia de otros libros que se centran solo en batallas, este análisis busca integrar todas las dimensiones del conflicto: militar, política, económica y social. Wieviorka ofrece una visión global que explica no solo cómo se ganó la guerra, sino cómo el conflicto transformó las estructuras del mundo moderno de manera irreversible.",
-    "imagen": "images/historia/primerGuerraMundial.jpg"
+    "imagen": "images/historia/primeraGuerraMundial.jpg"
   },
   {
     "titulo": "El mundo que forjó la peste",

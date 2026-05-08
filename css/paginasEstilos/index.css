@@ -1,7 +1,11 @@
 /**Caracteristicas*/
 .caracteristicas{
-    margin: 30px 0;
     padding: 70px 0;
+}
+.caracteristicas .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .caracteristicas li{
     font-weight: bold;
@@ -33,13 +37,16 @@
         padding: 20px 70px;
     }
     .caracteristicas .container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax());
-    gap: clamp(10px, 2vw, 20px);
-    justify-content: space-around;
-    padding: 0 10px;
+    display:flex;
+    flex-direction: column;
     }
     .direccion{
     display: block;
+    }
+}
+@media (min-width: 1100px){
+    .caracteristicas .container{
+    flex-direction: row;
+    justify-content: space-around;
     }
 }

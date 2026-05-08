@@ -28,9 +28,6 @@
     object-fit: cover;
     border-radius: 20px;
 }
-.libros-contenedores{
-    margin: 30px 0;
-}
 .libros-contenedores .container{
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(80px,350px));

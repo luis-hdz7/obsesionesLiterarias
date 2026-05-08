@@ -4,28 +4,28 @@
     "autor": "Victor Hugo",
     "categoria": "destacados",
     "descripcion": "Los Miserables de Víctor Hugo narra la redención de Jean Valjean, un exconvicto que busca una nueva vida en la Francia del siglo XIX. La historia entrelaza pobreza, amor, justicia y la lucha revolucionaria en las barricadas de París.",
-    "imagen": "images/libro1.jpg"
+    "imagen": "images/destacados/libro1.jpg"
   },
   {
     "titulo": "Crimen y Castigo",
     "autor": "Fiodor Dostoyevski",
     "categoria": "destacados",
     "descripcion": "Un joven que comete un crimen y debe enfrentarse a las consecuencias psicológicas de sus actos. El conficto interno del protagonista nos lleva a un intenso viaje sobre la moral la culpa y la redención",
-    "imagen": "images/libro2.jpg"
+    "imagen": "images/destacados/libro2.jpg"
   },
   {
     "titulo": "Mujercitas",
     "autor": "Louisa May Alcott",
     "categoria": "destacados",
     "descripcion": "La historia sigue a las hermanas March mientras crecen durante la Guerra Civil estadounidense, enfrentando desafíos personales, sueños y valores familiares que moldean su camino hacia la madurez.",
-    "imagen": "images/libro3.jpg"
+    "imagen": "images/destacados/libro3.jpg"
   },
   {
     "titulo": "Azul...",
     "autor": "Rubén Darío",
     "categoria": "destacados",
     "descripcion": "Una colección de cuentos y poemas que mezcla fantasía, crítica social y belleza estética, considerada una obra clave del modernismo literario en América Latina.",
-    "imagen": "images/libro4.jpg"
+    "imagen": "images/destacados/libro4.jpg"
   },
   {
     "titulo": "1984",

@@ -62,6 +62,9 @@
 .categoria-img:hover {
     transform: translateY(-5px);
 }
+.contenedor-libro{
+    margin-bottom: 30px;
+}
 /**Categorias*/
 .titulo-seccion{
     text-align: center;

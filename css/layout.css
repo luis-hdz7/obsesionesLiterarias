@@ -104,7 +104,7 @@ footer{
         z-index: 1000;
     }
     .hero{
-        height: 90vh;
+        height: 80vh;
     }
 }
 @media (min-width: 500px){

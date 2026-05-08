@@ -46,6 +46,7 @@ fetch('../js/libros.json')
                 <p><strong>${item.titulo}</strong></p>
                 <ul>
                     <li><em>${item.autor}</em></li>
+                    <li>${item.año}</li>
                 </ul>
                 <button class="btn-agregarCarrito btn-generico">Agregar al Carrito</button>
             </div>
@@ -71,6 +72,7 @@ iconosCategoria.forEach(iconoCategoria => {
                     <p><strong>${item.titulo}</strong></p>
                     <ul>
                         <li><em>${item.autor}</em></li>
+                        <li>${item.año}</li>
                     </ul>
                     <button class="btn-agregarCarrito btn-generico">Agregar al Carrito</button>
                 </div>

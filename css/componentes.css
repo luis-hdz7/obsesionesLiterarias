@@ -48,19 +48,42 @@
     transform: translateY(-5px);
 }
 /**popup*/
-.popup{
-    position: relative;
+.contenedor-centrado-popUp {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    overflow: hidden;
+}
+.overlay-popup {
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    backdrop-filter: blur(3px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.popup {
+    position: relative; /* Para que el botón 'cerrar' se ubique respecto a esto */
     width: 300px;
-    min-height: 400px;
-    padding: 50px 25px 25px;
-    background: rgba(245,236,220,.97);
+    background: var(--color-bg);
     border-radius: 20px;
+    padding: 50px 25px 25px;
     box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    /* Quitamos el transform: translate del CSS anterior para evitar conflictos */
+    transition: transform 0.2s ease-in-out;
 }
-.popup:hover{
-    transform: translate(-50%, -50%) scale(1.01);
+
+.popup:hover {
+    transform: scale(1.01); 
 }
-.cerrar{
+
+.cerrar {
     position: absolute;
     top: 12px;
     right: 12px;
@@ -72,41 +95,33 @@
     font-size: 18px;
     cursor: pointer;
     transition: background .2s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--color-text);
 }
-.cerrar:hover{
+
+.cerrar:hover {
     background: rgba(0,0,0,.08);
 }
-.apagado{
-    display: none;
-}
-.titulo-sinapsis p{
-    font-size: var(--fs-xl);
-    font-family: var(--cursiva-fuentes);
-    font-weight: bold;
-}
-.sinapsis{
-    padding: 0 20px;
-    max-height: 220px;
+
+.sinapsis {
+    padding: 0 10px;
+    max-height: 250px;
     overflow-y: auto;
 }
 .sinapsis p{
     font-size: var(--fs-medio);
-    line-height: 30px;
 }
-.overlay-popup{
-    width: 100%;
-    height: 100%;
-    background: rgba(0,0,0,.45);
-    backdrop-filter: blur(3px);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.titulo-sinapsis p{
+    font-family: var(--cursiva-fuentes);
+    font-size: var(--fs-lg);
+    font-weight: bold;
 }
-.contenedor-centrado-popUp{
-    position: fixed;
-    inset: 0;
-    z-index: 1000;
+.apagado, .contenedor-centrado-popUp-apagado {
+    display: none;
 }
+
 /**Centrar Textos*/
 .contenedor-texto-centrado{
     text-align: center;

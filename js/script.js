@@ -87,13 +87,15 @@ iconosCategoria.forEach(iconoCategoria => {
 /*const contenedorPopUp= document.createElement('div')
 contenedorPopUp.classList.add('overlay-popup')
 document.body.appendChild(contenedorPopUp)*/
-const contenedorPopUp= document.querySelector('.contenedor-centrado-popUp')
+const contenedorPopUp= document.querySelector('.contenedor-centrado-popUp-apagado')
 const bookContainer = document.querySelectorAll('.book-container');
 bookContainer.forEach(contenedorLibro=>{
     contenedorLibro.addEventListener('click', async (e)=>{
         if (e.target.tagName==="IMG"){
             let libroEscogido=e.target.dataset.libro
             try {
+                contenedorPopUp.classList.remove('contenedor-centrado-popUp-apagado')
+                contenedorPopUp.classList.add('contenedor-centrado-popUp')
                 const respuesta = await fetch(`${prefijoRuta}js/libros.json`)
                 if (!respuesta.ok) throw new Error("No se pudo cargar el archivo JSON");
                 const dato = await respuesta.json();
@@ -111,11 +113,13 @@ bookContainer.forEach(contenedorLibro=>{
                         </div>
                     </div>
                 `).join('');
-                contenedorPopUp.classList.remove('apagado')
+                contenedorPopUp.classList.remove('contenedor-centrado-popUp-apagado');
+                contenedorPopUp.classList.add('contenedor-centrado-popUp');
                 //*Boton de Cerrado del PopUp
                 const botonCerrado = contenedorPopUp.querySelector('.cerrar');
                 botonCerrado.addEventListener('click', () => {
-                    contenedorPopUp.classList.add('apagado');
+                    contenedorPopUp.classList.add('contenedor-centrado-popUp-apagado');
+                    contenedorPopUp.classList.remove('contenedor-centrado-popUp');
                 })
             } catch (error) {
                 console.error("Hubo un problema:", error);

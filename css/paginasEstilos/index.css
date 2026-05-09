@@ -29,13 +29,6 @@
 
 /**DESKTOP*/
 @media (min-width: 850px){
-    .libros-destacados .container{
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    .item{
-        padding: 20px 70px;
-    }
     .caracteristicas .container{
     display:flex;
     flex-direction: column;

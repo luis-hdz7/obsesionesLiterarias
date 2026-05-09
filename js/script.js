@@ -42,7 +42,7 @@ fetch(`${prefijoRuta}js/libros.json`)
         const librosDestacados = datos.filter(libro => libro.categoria === 'destacados')
         contenedorDestacados.innerHTML=librosDestacados.map(item=>`
             <div class="item">
-                <img src="${prefijoRuta}${item.imagen}" alt="Imagen de ${item.titulo}">
+                <img src="${prefijoRuta}${item.imagen}" alt="Imagen de ${item.titulo}" data-libro="${item.titulo}">
                 <p><strong>${item.titulo}</strong></p>
                 <ul>
                     <li><em>${item.autor}</em></li>
@@ -68,7 +68,7 @@ iconosCategoria.forEach(iconoCategoria => {
             const librosFiltrados = datos.filter(libro => libro.categoria === seccionEscogida);
             contenedor.innerHTML = librosFiltrados.map(item =>`
                 <div class="item">
-                    <img src="${prefijoRuta}${item.imagen}" alt="Imagen de ${item.titulo}">
+                    <img src="${prefijoRuta}${item.imagen}" alt="Imagen de ${item.titulo}" data-libro="${item.titulo}">
                     <p><strong>${item.titulo}</strong></p>
                     <ul>
                         <li><em>${item.autor}</em></li>
@@ -82,3 +82,45 @@ iconosCategoria.forEach(iconoCategoria => {
         }
     });
 });
+
+//*MIRAR LAS DESCRIPCIONES DE LOS LIBROS
+/*const contenedorPopUp= document.createElement('div')
+contenedorPopUp.classList.add('overlay-popup')
+document.body.appendChild(contenedorPopUp)*/
+const contenedorPopUp= document.querySelector('.contenedor-centrado-popUp')
+const bookContainer = document.querySelectorAll('.book-container');
+bookContainer.forEach(contenedorLibro=>{
+    contenedorLibro.addEventListener('click', async (e)=>{
+        if (e.target.tagName==="IMG"){
+            let libroEscogido=e.target.dataset.libro
+            try {
+                const respuesta = await fetch(`${prefijoRuta}js/libros.json`)
+                if (!respuesta.ok) throw new Error("No se pudo cargar el archivo JSON");
+                const dato = await respuesta.json();
+                const librosFiltradosDescripcion = dato.filter(libro => libro.titulo === libroEscogido);
+                contenedorPopUp.innerHTML = librosFiltradosDescripcion.map(item =>`
+                    <div class="overlay-popup">
+                        <div class="popup">
+                            <button class="cerrar"><i class="fa-solid fa-xmark"></i></button>
+                            <div class="contenedor-texto-centrado titulo-sinapsis">
+                                <p>${item.titulo}</p>
+                            </div>
+                            <div class="contenedor-texto-centrado sinapsis">
+                                <p>${item.descripcion}</p>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+                contenedorPopUp.classList.remove('apagado')
+                //*Boton de Cerrado del PopUp
+                const botonCerrado = contenedorPopUp.querySelector('.cerrar');
+                botonCerrado.addEventListener('click', () => {
+                    contenedorPopUp.classList.add('apagado');
+                })
+            } catch (error) {
+                console.error("Hubo un problema:", error);
+            }
+        }
+    })
+})
+

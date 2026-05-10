@@ -7,11 +7,14 @@
 <p align="center">
   <em>— Rubén Darío</em>
 </p>
----
+
+-------
+
 # Obsesiones Literarias
 
 Este repositorio contiene un sitio web relacionado con un espacio donde las personas puedan leer en internet sus obras favoritas de manera segura.
----
+
+----------
 
 ## ¿A quién va dirigido?
 

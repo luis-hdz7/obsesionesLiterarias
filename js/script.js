@@ -36,7 +36,7 @@ const filtrarPorCategoria = categoria =>
 const filtrarPorTitulo= titulo=>
     libros.filter(libro=>libro.titulo===titulo)
 
-//*Crear funcion de HTML
+//*Crear funciones relacionados al HTML
 htmlLibros=(prefijoRuta,item)=>{
     return (`
     <div class="item">

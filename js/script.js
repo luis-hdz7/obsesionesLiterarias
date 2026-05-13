@@ -40,14 +40,18 @@ const filtrarPorTitulo= titulo=>
 htmlLibros=(prefijoRuta,item)=>{
     return (`
     <div class="item">
-        <img src="${prefijoRuta}${item.imagen}" alt="Imagen de ${item.titulo}" data-libro="${item.titulo}">
+        <div class="contenedor-img-libro">
+            <img src="${prefijoRuta}${item.imagen}" alt="Imagen de ${item.titulo}" data-libro="${item.titulo}">
+            <span class="tooltip-text">Haz click para ver la descripción</span>
+        </div>
         <p><strong>${item.titulo}</strong></p>
         <ul>
             <li><em>${item.autor}</em></li>
             <li>${item.año}</li>
         </ul>
         <button class="btn-agregarCarrito btn-generico">Agregar al Carrito</button>
-    </div>`)
+    </div>
+`)
 }
 htmlPopUp=(item)=>{
     return (
@@ -112,4 +116,15 @@ bookContainer.forEach(contenedorLibro=>{
         }
     })
 })
+/*
+//*TOOLTIP
+const tooltip=document.querySelector('.tool-tip-libros')
+const bookContainer = document.querySelectorAll('.book-container')
+bookContainer.forEach(contenedorLibro=>{
+    contenedorLibro.addEventListener('mouseover',(e)=>{
+        if (e.target.tagName==='IMG'){
+            bookContainer.append(tooltip)
+        }
+    })
+})*/
 

@@ -31,6 +31,7 @@ main{
     text-align: center;
     border-radius: 8px;
     background-color: var(--color-oscuro);
+    width: 100%;
 }
 .nuestras-redes h3{
     color: var(--color-claro);

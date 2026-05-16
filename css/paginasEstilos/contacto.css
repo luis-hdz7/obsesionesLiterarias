@@ -1,17 +1,8 @@
 /**BIENVENIDA*/
-.descripcion-bienvenida{
-    text-align: center;
-}
-.bienvenida-contenedor{
-    text-align: center;
-}
 .bienvenida-contenedor h2{
     font-size: var(fs-4xl);
 }
 /**Main*/
-.titulo-bienvenida{
-    text-align: center;
-}
 main{
     display: flex;
     flex-direction: column;

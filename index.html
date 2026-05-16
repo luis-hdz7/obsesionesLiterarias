@@ -27,9 +27,12 @@
                 <button class="theme">
                     <i class="fa-solid fa-sun changeTheme"></i>
                 </button>
-                <button class="carrito-principal">
-                    <i class="fa-solid fa-cart-shopping"></i>
-                </button>
+                <div class="shopping">
+                    <button class="carrito-principal">
+                        <i class="fa-solid fa-cart-shopping"></i>
+                        <span class="quantity">0</span>
+                    </button>
+                </div>
             </div>
         </nav>
     </header>
@@ -59,6 +62,43 @@
         </div>
     </section>
     <section class="contenedor-centrado-popUp-apagado"></section>
+    <!--*ASIDE-->
+    <aside class="apagado cart-inicial">
+        <div class="cart-header contenedor-texto-centrado">
+            <h3>Carrito de Compra</h3>
+            <button class="cerrar cerrar-cart"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+        <div class="cart-items">
+            <!--<div class="cart-item">
+                <div>
+                    <h4><em>Los Miserables</em></h4>
+                </div>
+                <div class="cart-item-descripcion">
+                    <div class="cart-item-img">
+                        <img src="images/destacados/libro1.jpg" alt="">
+                    </div>
+                    <div class="cart-item-txt">
+                        <div class="cart-item-precio contenedor-texto-centrado"><p class="valor-unitario">13</p></div>
+                        <div class="cart-item-cantidad">
+                            <button class="menos cambiar-cantidad" data-cambio="mas"><i class="fa-solid fa-plus"></i></button>
+                            <p class="cantidad-libro">1</p>
+                            <button class="mas cambiar-cantidad" data-cambio="menos"><i class="fa-solid fa-minus"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="total">
+                    <p class="total-por-libro"></p>
+                </div>
+                <div class="eliminar">
+                    <button class="btn-alargado">Eliminar</button>
+                </div>
+            </div>-->
+        </div>
+        <div class="cart-footer">
+            <p>Total: $0</p>
+            <button class="btn-pequenio">Comprar</button>
+        </div>
+    </aside>
     <!--*FOOTER-->
     <footer>
         <div >

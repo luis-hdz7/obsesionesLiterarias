@@ -45,3 +45,12 @@ Para cualquier persona que sienta interés por el mundo de la literatura y quier
   * historia
   * nicaraguenses
   * novelas
+
+---------------
+
+## Características
+
+- [x] Dark Mode
+- [x] Contenedor de Citas Aleatorias
+- [ ] Carrito de Compra
+- [x] Diseño Responsive

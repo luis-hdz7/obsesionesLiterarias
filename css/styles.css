@@ -138,7 +138,10 @@ textarea::placeholder {
 .dark-mode textarea{
     color: var(--color-chocolate-claro);;
 }
-
+.dark-mode .quantity{
+    background:  var(--color-claro);
+    color: var(--color-oscuro);
+}
 
 /**DESKTOP*/
 @media (min-width: 850px){

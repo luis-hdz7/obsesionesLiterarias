@@ -65,10 +65,6 @@
 .contenedor-libro{
     margin-bottom: 30px;
 }
-/**Categorias*/
-.titulo-seccion{
-    text-align: center;
-}
 @media (min-width: 810px){
     #cita{
         font-size: var(--fs-2xl);

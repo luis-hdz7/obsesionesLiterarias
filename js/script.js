@@ -50,6 +50,7 @@ htmlLibros=(prefijoRuta,item)=>{
         <ul>
             <li><em>${item.autor}</em></li>
             <li>${item.año}</li>
+            <li>$${item.precio}</li>
         </ul>
         <button class="btn-agregarCarrito btn-generico" data-libro="${item.titulo}">Agregar al Carrito</button>
     </div>
@@ -75,7 +76,7 @@ htmlPopUp=(item)=>{
 htmlCarrito=(item)=>{
     return(
         `
-        <div class="cart-item" data-id="${item.titulo}">
+        <div class="cart-item" data-id="${item.id}">
             <div>
                 <h4><em>${item.titulo}</em></h4>
             </div>
@@ -84,16 +85,16 @@ htmlCarrito=(item)=>{
                     <img src="${prefijoRuta}${item.imagen}" alt="Imagen de ${item.titulo}">
                 </div>
                 <div class="cart-item-txt">
-                    <div class="cart-item-precio contenedor-texto-centrado"><p class="valor-unitario">13</p></div>
+                    <div class="cart-item-precio contenedor-texto-centrado"><p>$<span class="valor-unitario">${item.precio}</span></p></div>
                     <div class="cart-item-cantidad">
                         <button class="menos cambiar-cantidad" data-cambio="mas"><i class="fa-solid fa-plus"></i></button>
                         <p class="cantidad-libro">1</p>
-                        <button class="mas cambiar-cantidad" data-cambio="menos"><i class="fa-solid fa-minus"></i></button>
+                        <button class="menos cambiar-cantidad" data-cambio="menos"><i class="fa-solid fa-minus"></i></button>
                     </div>
                 </div>
             </div>
             <div class="total">
-                <p class="total-por-libro"></p>
+                <p >$<span class="total-por-libro">${item.precio}</span></p>
             </div>
             <div class="eliminar">
                 <button class="btn-alargado">Eliminar</button>
@@ -183,14 +184,14 @@ itemsLibro.forEach(itemLibro => {
     const cantidadLibroElemento = itemLibro.querySelector('.cantidad-libro');
     const valorUnitario = itemLibro.querySelector('.valor-unitario');
     const totalPorLibro = itemLibro.querySelector('.total-por-libro');
-    const precioUnitario = parseInt(valorUnitario.textContent, 10) || 0;
+    const precioUnitario = parseFloat(valorUnitario.textContent) || 0
     const actualizarTotalHijo = () => {
-        let cantidadActual = parseInt(cantidadLibroElemento.textContent, 10) || 1;
+        let cantidadActual = parseFloat (cantidadLibroElemento.textContent) || 1;
         totalPorLibro.textContent = precioUnitario * cantidadActual;
     };
     botonesCambio.forEach(botonCambio => {
         botonCambio.addEventListener('click', () => {
-            let cantidadNumero = parseInt(cantidadLibroElemento.textContent, 10) || 1;
+            let cantidadNumero = parseFloat(cantidadLibroElemento.textContent) || 1;
             if (botonCambio.dataset.cambio === 'mas') {
                 cantidadNumero += 1;
             } else if (botonCambio.dataset.cambio === 'menos') {
@@ -206,7 +207,7 @@ itemsLibro.forEach(itemLibro => {
     itemLibro.addEventListener('click', (e) => {
         if (e.target.classList.contains('eliminar')) {
             itemLibro.remove();
-            // Opcional: Aquí podrías llamar a una función para actualizar el Gran Total del carrito completo
+            
         }
     });
     actualizarTotalHijo();
@@ -228,6 +229,7 @@ bookContainer.forEach(contenedorLibro => {
             );
             //* Pintar carrito
             contenedorAsidePrincipal.innerHTML = librosSeleccionados.map(item => htmlCarrito(item)).join('');
+            actualizarGranTotal()
         }
     });
 });
@@ -241,7 +243,7 @@ contenedorAsidePrincipal.addEventListener('click', (e) => {
         const cantidadLibroElemento = itemLibro.querySelector('.cantidad-libro');
         const valorUnitario = itemLibro.querySelector('.valor-unitario');
         const totalPorLibro = itemLibro.querySelector('.total-por-libro');
-        const precioUnitario = parseInt(valorUnitario.textContent, 10) || 0;
+        const precioUnitario = parseFloat(valorUnitario.textContent) || 0;
         let cantidadNumero = parseInt(cantidadLibroElemento.textContent, 10) || 1;
         if (botonCambio.dataset.cambio === 'mas') {
             cantidadNumero++;
@@ -272,6 +274,6 @@ const actualizarGranTotal = () => {
     totales.forEach(totalLibro => {
         total += parseFloat(totalLibro.textContent) || 0;
     });
-    document.querySelector('.cart-footer p')
-        .textContent = `Total: $${total}`;
+    document.querySelector('.gran-total')
+        .textContent = `${total}`;
 }

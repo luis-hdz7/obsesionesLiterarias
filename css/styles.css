@@ -33,7 +33,6 @@
 html{
     scroll-behavior: smooth;
 }
-
 body{
     font-family: var(--parrafos-fuente);
     color: var(--color-text);
@@ -45,6 +44,9 @@ h1, h2, h3, h4 {
     font-family: var(--titulos-fuente);
     color: var(--color-text);
     line-height: 1.2;
+}
+hr{
+    background-color: var(--color-oscuro);
 }
 .container{
     max-width: 1400px;
@@ -108,23 +110,30 @@ textarea::placeholder {
     --color-text: var(--color-claro);
     --overlay: rgba(0,0,0,0.7);
 }
-.dark-mode .item {
+.dark-mode .item, .dark-mode .cart {
     background-color: #242423;
     box-shadow: 0 4px 15px rgba(0,0,0,0.6);
 }
 .dark-mode .item:hover{
     box-shadow: 0 8px 20px rgba(0,0,0,0.8);
 }
-.dark-mode .btn-generico {
+.dark-mode .btn-generico,
+.dark-mode .btn-pequenio,
+.dark-mode .btn-alargado {
     background-color: var(--color-chocolate-claro);
     color: var(--color-oscuro);
     border: none;
 }
-.dark-mode .btn-generico:hover{
+.dark-mode .btn-generico:hover,
+.dark-mode .btn-pequenio:hover,
+.dark-mode .btn-alargado:hover{
     background-color: var(--color-claro-hover);
 }
 .dark-mode .carrito-principal{
     color: var(--color-claro);
+}
+.dark-mode .menos:hover,.mas:hover{
+    color: var(--color-claro-hover);
 }
 .dark-mode a:hover,
 .dark-mode a:focus{

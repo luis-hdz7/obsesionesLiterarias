@@ -264,3 +264,11 @@
         padding: 20px 70px;
     }
 }
+@media (min-width: 700px){
+
+    .cart{
+        top: 60px;
+        height: calc(100vh - 60px);
+    }
+
+}

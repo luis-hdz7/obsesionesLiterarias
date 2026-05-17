@@ -132,7 +132,8 @@ textarea::placeholder {
 .dark-mode .carrito-principal{
     color: var(--color-claro);
 }
-.dark-mode .menos:hover,.mas:hover{
+.dark-mode .menos i:hover,
+.dark-mode .mas i:hover{
     color: var(--color-claro-hover);
 }
 .dark-mode a:hover,

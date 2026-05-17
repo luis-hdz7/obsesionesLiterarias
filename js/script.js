@@ -37,6 +37,11 @@ const filtrarPorTitulo= titulo=>
     libros.filter(libro=>libro.titulo===titulo)
 const filtrarPorNombre = nombre =>
     libros.find(libro => libro.titulo === nombre);
+const filtrarPorId = id => libros.find(libro => libro.id === Number(id));
+const guardarCarrito = () => {
+    localStorage.setItem('carritoLibros', JSON.stringify(librosCarritos));
+};
+
 
 //*Crear funciones relacionados al HTML
 htmlLibros=(prefijoRuta,item)=>{
@@ -52,7 +57,7 @@ htmlLibros=(prefijoRuta,item)=>{
             <li>${item.año}</li>
             <li>$${item.precio}</li>
         </ul>
-        <button class="btn-agregarCarrito btn-generico" data-libro="${item.titulo}">Agregar al Carrito</button>
+        <button class="btn-agregarCarrito btn-generico" data-libro="${item.id}">Agregar al Carrito</button>
     </div>
 `)
 }
@@ -73,11 +78,11 @@ htmlPopUp=(item)=>{
         `
     )
 }
-htmlCarrito=(item)=>{
-    return(
+htmlCarrito = (item, cantidad) => {
+    return (
         `
         <div class="cart-item" data-id="${item.id}">
-            <div>
+            <div class="contenedor-texto-centrado">
                 <h4><em>${item.titulo}</em></h4>
             </div>
             <div class="cart-item-descripcion">
@@ -85,25 +90,28 @@ htmlCarrito=(item)=>{
                     <img src="${prefijoRuta}${item.imagen}" alt="Imagen de ${item.titulo}">
                 </div>
                 <div class="cart-item-txt">
-                    <div class="cart-item-precio contenedor-texto-centrado"><p>$<span class="valor-unitario">${item.precio}</span></p></div>
+                    <div class="cart-item-precio contenedor-texto-centrado">
+                        <p>$<span class="valor-unitario">${item.precio}</span></p>
+                    </div>
                     <div class="cart-item-cantidad">
-                        <button class="menos cambiar-cantidad" data-cambio="mas"><i class="fa-solid fa-plus"></i></button>
-                        <p class="cantidad-libro">1</p>
+                        <button class="mas cambiar-cantidad" data-cambio="mas"><i class="fa-solid fa-plus"></i></button>
+                        <!-- 🔄 Ahora muestra la cantidad dinámica -->
+                        <p class="cantidad-libro">${cantidad}</p> 
                         <button class="menos cambiar-cantidad" data-cambio="menos"><i class="fa-solid fa-minus"></i></button>
                     </div>
                 </div>
             </div>
             <div class="total">
-                <p >$<span class="total-por-libro">${item.precio}</span></p>
+                <!-- 🔄 Mostramos el total acumulado de inmediato -->
+                <p>$<span class="total-por-libro">${(item.precio * cantidad).toFixed(2)}</span></p>
             </div>
             <div class="eliminar">
-                <button class="btn-alargado">Eliminar</button>
+                <button class="btn-alargado eliminar-btn">Eliminar</button>
             </div>
         </div>
         `
     )
 }
-
 //* Cargar los libros Destacados
 fetch(`${prefijoRuta}js/libros.json`)
     .then(res => {
@@ -116,7 +124,8 @@ fetch(`${prefijoRuta}js/libros.json`)
         libros = datos;
         const contenedorDestacados =document.querySelector('.contenedor-libro-destacados');
         const librosDestacados = filtrarPorCategoria('destacados');
-        contenedorDestacados.innerHTML =librosDestacados.map(item => htmlLibros(prefijoRuta, item)).join('');
+        contenedorDestacados.innerHTML =librosDestacados.map(item => htmlLibros(prefijoRuta, item)).join('')
+        renderizarCarrito()
     });
 
 //*Cargar Libros dependiendo de la opcion que elija el usuario
@@ -149,131 +158,101 @@ bookContainer.forEach(contenedorLibro=>{
         }
     })
 })
-/*
-//*TOOLTIP
-const tooltip=document.querySelector('.tool-tip-libros')
-const bookContainer = document.querySelectorAll('.book-container')
-bookContainer.forEach(contenedorLibro=>{
-    contenedorLibro.addEventListener('mouseover',(e)=>{
-        if (e.target.tagName==='IMG'){
-            bookContainer.append(tooltip)
-        }
-    })
-})*/
-
-
-//*CARRITO DE COMPRA
-//*Cerrar el carrito
-const botonCerrado=document.querySelector('.cerrar-cart')
-const cartAside=document.querySelector('.cart-inicial')
-botonCerrado.addEventListener('click',()=>{
-    cartAside.classList.add('apagado')
-    cartAside.classList.remove('cart')
-})
-//*Entrar al Carrito
+//* CARRITO DE COMPRA
+//* Cerrar el carrito
+const botonCerrado = document.querySelector('.cerrar-cart');
+const cartAside = document.querySelector('.cart-inicial');
 const carritoPrincipal=document.querySelector('.carrito-principal')
-carritoPrincipal.addEventListener('click',()=>{
-    cartAside.classList.add('cart')
-})
-
-
-//*
-const itemsLibro = document.querySelectorAll('.cart-item');
-itemsLibro.forEach(itemLibro => {
-    const botonesCambio = itemLibro.querySelectorAll('.cambiar-cantidad');
-    const cantidadLibroElemento = itemLibro.querySelector('.cantidad-libro');
-    const valorUnitario = itemLibro.querySelector('.valor-unitario');
-    const totalPorLibro = itemLibro.querySelector('.total-por-libro');
-    const precioUnitario = parseFloat(valorUnitario.textContent) || 0
-    const actualizarTotalHijo = () => {
-        let cantidadActual = parseFloat (cantidadLibroElemento.textContent) || 1;
-        totalPorLibro.textContent = precioUnitario * cantidadActual;
-    };
-    botonesCambio.forEach(botonCambio => {
-        botonCambio.addEventListener('click', () => {
-            let cantidadNumero = parseFloat(cantidadLibroElemento.textContent) || 1;
-            if (botonCambio.dataset.cambio === 'mas') {
-                cantidadNumero += 1;
-            } else if (botonCambio.dataset.cambio === 'menos') {
-                cantidadNumero -= 1;
-                if (cantidadNumero <= 0) {
-                    cantidadNumero = 1;
-                }
-            }
-            cantidadLibroElemento.textContent = cantidadNumero;
-            actualizarTotalHijo();
-        });
-    });
-    itemLibro.addEventListener('click', (e) => {
-        if (e.target.classList.contains('eliminar')) {
-            itemLibro.remove();
-            
-        }
-    });
-    actualizarTotalHijo();
+botonCerrado.addEventListener('click', () => {
+    cartAside.classList.add('apagado');
+    cartAside.classList.remove('cart');
 });
-
-//* Libros Para el Carrito
+//* Entrar al Carrito
+carritoPrincipal.addEventListener('click', () => {
+    cartAside.classList.remove('apagado');
+    cartAside.classList.add('cart');
+});
+//* Variables del Carrito
 const contenedorAsidePrincipal = document.querySelector('.cart-items');
-let librosCarritos = new Set();
 const quantity = document.querySelector('.quantity');
+let librosCarritos = JSON.parse(localStorage.getItem('carritoLibros')) || [];
+
+//* 1. Agregar Libros al Carrito desde la tienda
 bookContainer.forEach(contenedorLibro => {
     contenedorLibro.addEventListener('click', (e) => {
         if (e.target.tagName === 'BUTTON') {
-            librosCarritos.add(e.target.dataset.libro);
-            //* Actualizar cantidad
-            quantity.textContent = librosCarritos.size;
-            //* Obtener los libros completos
-            const librosSeleccionados = [...librosCarritos].map(libro =>
-                filtrarPorNombre(libro)
-            );
-            //* Pintar carrito
-            contenedorAsidePrincipal.innerHTML = librosSeleccionados.map(item => htmlCarrito(item)).join('');
-            actualizarGranTotal()
+            const idLibro = e.target.dataset.libro;
+            // Buscar si el libro ya está en el carrito
+            const libroExistente = librosCarritos.find(item => item.id === idLibro);
+            if (libroExistente) {
+                // Si ya existe, aumentamos su cantidad
+                libroExistente.cantidad += 1;
+            } else {
+                // Si es nuevo, lo agregamos con cantidad inicial de 1
+                librosCarritos.push({ id: idLibro, cantidad: 1 });
+            }
+            // Renderizar el carrito actualizado
+            renderizarCarrito();
         }
     });
 });
-//*Hacer Funcionar los botones
+
+//* 2. DELEGACIÓN DE EVENTOS: Controlar botones de más, menos y eliminar dentro del carrito
 contenedorAsidePrincipal.addEventListener('click', (e) => {
     const itemLibro = e.target.closest('.cart-item');
     if (!itemLibro) return;
-    //* Cambiar cantidad
-    if (e.target.closest('.cambiar-cantidad')) {
+    const idLibro = itemLibro.dataset.id;
+    // Buscamos la referencia del objeto en nuestro array de datos
+    const libroEnDatos = librosCarritos.find(item => item.id === idLibro);
+    //* Botones cambiar cantidad
+    if (e.target.closest('.cambiar-cantidad') && libroEnDatos) {
         const botonCambio = e.target.closest('.cambiar-cantidad');
-        const cantidadLibroElemento = itemLibro.querySelector('.cantidad-libro');
-        const valorUnitario = itemLibro.querySelector('.valor-unitario');
-        const totalPorLibro = itemLibro.querySelector('.total-por-libro');
-        const precioUnitario = parseFloat(valorUnitario.textContent) || 0;
-        let cantidadNumero = parseInt(cantidadLibroElemento.textContent, 10) || 1;
         if (botonCambio.dataset.cambio === 'mas') {
-            cantidadNumero++;
-        } else {
-            cantidadNumero--;
-            if (cantidadNumero <= 0) {
-                cantidadNumero = 1;
+            libroEnDatos.cantidad++;
+        } else if (botonCambio.dataset.cambio === 'menos') {
+            libroEnDatos.cantidad--;
+            if (libroEnDatos.cantidad <= 0) {
+                libroEnDatos.cantidad = 1;
             }
         }
-        cantidadLibroElemento.textContent = cantidadNumero;
-        totalPorLibro.textContent = precioUnitario * cantidadNumero
-        actualizarGranTotal();
+        // Re-renderizamos para que todo se sincronice
+        renderizarCarrito();
     }
-    //* Eliminar item
-    if (e.target.closest('.eliminar')) {
-        const idLibro = itemLibro.dataset.id;
-        librosCarritos.delete(idLibro);
-        itemLibro.remove();
-        quantity.textContent = librosCarritos.size;
-        actualizarGranTotal();
+
+    //* Botón Eliminar
+    if (e.target.closest('.eliminar-btn')) {
+        // Filtramos el array para remover el objeto eliminado
+        librosCarritos = librosCarritos.filter(item => item.id !== idLibro);
+        renderizarCarrito();
     }
 });
 
-//*Calcular el Total
+//* 3. Funciones de control y renderizado
+//Función central que unifica el renderizado de la interfaz
+const renderizarCarrito = () => {
+    guardarCarrito();
+    const totalProductos = librosCarritos.reduce(
+        (acc, item) => acc + item.cantidad,
+        0
+    );
+    quantity.textContent = totalProductos;
+    contenedorAsidePrincipal.innerHTML = librosCarritos.map(objetoCarrito => {
+        const datosLibro = filtrarPorId(objetoCarrito.id);
+        // Validación importante
+        if (!datosLibro) return '';
+        return htmlCarrito(datosLibro, objetoCarrito.cantidad);
+    }).join('');
+    actualizarGranTotal();
+};
+// Calcular el Gran Total de todo el carrito
 const actualizarGranTotal = () => {
-    const totales = document.querySelectorAll('.total-por-libro');
+    const totales = contenedorAsidePrincipal.querySelectorAll('.total-por-libro');
     let total = 0;
     totales.forEach(totalLibro => {
         total += parseFloat(totalLibro.textContent) || 0;
     });
-    document.querySelector('.gran-total')
-        .textContent = `${total}`;
-}
+    const granTotalElemento = document.querySelector('.gran-total');
+    if (granTotalElemento) {
+        granTotalElemento.textContent = total.toFixed(2);
+    }
+};

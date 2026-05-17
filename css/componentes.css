@@ -234,13 +234,15 @@
     justify-content: space-between;
     gap: 10px;
 }
-.menos,.mas{
+.menos,
+.mas{
     background: none;
     border: none;
     cursor: pointer;
     color: var(--color-text);
 }
-.menos:hover,.mas:hover{
+.menos i:hover,
+.mas i:hover{
     color: var(--color-oscuro-hover);
 }
 .cart-footer{

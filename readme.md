@@ -52,5 +52,11 @@ Para cualquier persona que sienta interés por el mundo de la literatura y quier
 
 - [x] Dark Mode
 - [x] Contenedor de Citas Aleatorias
-- [ ] Carrito de Compra
+- [x] Carrito de Compra
 - [x] Diseño Responsive
+
+-------------
+
+### Links
+
+Para poder ver el link de la pagina puedes acceder al siguiente enlace [ObsesionesLiterarias](https://luis-hdz7.github.io/obsesionesLiterarias/)

@@ -18,7 +18,7 @@ Este repositorio contiene un sitio web relacionado con un espacio donde las pers
 
 ## ¿A quién va dirigido?
 
-Para cualquier persona que sienta interés por el mundo de la literatura y quiera leer alguna obra de manera online.
+Para cualquier persona que sienta interés por el mundo de la literatura y quiera leer alguna obra de manera online de forma segura.
 
 ----------
 
